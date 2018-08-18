@@ -89,8 +89,9 @@ function draw() {
 
 	let oneOverLeftZ = 1/leftZ;
 	let oneOverRightZ = 1/rightZ;
-	let stepInvZ = (oneOverRightZ - oneOverLeftZ) * stepT;
-	let initialStepInvZ = stepInvZ * initialStepT;
+	let oneOverZDiff = oneOverRightZ - oneOverLeftZ;
+	let stepInvZ = oneOverZDiff * stepT;
+	let initialStepInvZ = oneOverZDiff * initialStepT;
 	let invZ = oneOverLeftZ + initialStepInvZ;
 	let xDiffNm = rightX - leftX;
 	let startXNm = leftX + initialStepT * xDiffNm;
